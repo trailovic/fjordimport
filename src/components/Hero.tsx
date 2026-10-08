@@ -9,10 +9,10 @@ export default function Hero() {
       <div className="mx-auto grid min-h-170 max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
         <div className="relative z-10">
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.25em] text-slate-500">
-            Norsk importpartner
+            Nettsidekonsept · Demo
           </p>
 
-          <h1 className="max-w-3xl text-5xl font-black leading-tight text-slate-950 md:text-7xl">
+          <h1 className="max-w-3xl text-4xl sm:text-5xl font-black leading-tight text-slate-950 md:text-7xl">
             Pålitelig import. Sterke forbindelser.
           </h1>
 
@@ -44,7 +44,8 @@ export default function Hero() {
           <div className="aspect-4/3 overflow-hidden rounded-4xl bg-slate-300 shadow-2xl">
             <img
               src="/hero.jpg"
-              alt="Fjord Import"
+              alt="Containerskip i havn"
+              fetchPriority="high"
               className="h-full w-full object-cover"
             />
           </div>

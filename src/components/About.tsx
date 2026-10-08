@@ -9,7 +9,7 @@ const points = [
 export default function About() {
   return (
     <section id="about" className="bg-slate-50 px-6 py-24">
-      <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-2 lg:gap-14">
         <div>
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-slate-500">
             Om Fjord Import
@@ -36,11 +36,12 @@ export default function About() {
           </div>
         </div>
 
-        <div className="rounded-4xl border border-slate-200 bg-white p-8 shadow-xl">
+        <div className="rounded-4xl border border-slate-200 bg-white p-4 sm:p-8 shadow-xl">
           <div className="relative overflow-hidden rounded-3xl">
             <img
               src="/about.jpg"
-              alt="Norwegian fjord"
+              alt="Norsk fjord"
+              loading="lazy" decoding="async"
               className="absolute inset-0 h-full w-full object-cover blur-[2px]"
             />
 
