@@ -1,73 +1,30 @@
-# React + TypeScript + Vite
+# Fjord Import demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Responsive Norwegian business-site concept built with React, TypeScript, Tailwind and Vite.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm ci
+npm run dev
+npm run lint
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Contact form
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Without `VITE_CONTACT_ENDPOINT`, the form validates fields locally and explicitly confirms that nothing was sent or stored. Example contact details are not clickable.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+To enable delivery, copy `.env.example` to `.env.local` and set a public HTTPS endpoint that accepts multipart form data and returns a 2xx response only after accepting the inquiry. Fields: `name`, `email`, `company`, `message`, and honeypot `website`. Configure the receiving service, recipient and allowed origin before rebuilding. No secret belongs in a `VITE_` variable: these values are public in the built JavaScript.
+
+The frontend includes required fields, pending/success/error states, duplicate-submit protection and a 15-second timeout. On failure it retains the entered information. The receiving service must enforce server-side validation, spam prevention and rate limits. Test actual inbox delivery before launch; a successful HTTP response alone does not verify email delivery.
+
+## Customer handover
+
+- Replace demo contact information, company copy and demo labels in Hero, Contact and Footer; use the customer's copyright/branding.
+- Update page title, description and social metadata in index.html. Add canonical URL, og:url and an absolute og:image URL once the production domain and share image are known.
+- Confirm rights to both supplied photos before commercial reuse; this repository contains no image-license evidence.
+- Configure form delivery and appropriate privacy information before collecting real inquiries.
+- Verify navigation and form on mobile, tablet and desktop, including keyboard interaction, errors and a real inbox delivery test.
+
+The demo is intentionally not presented as a live import business. No form service or hosting subscription is provisioned by this change.

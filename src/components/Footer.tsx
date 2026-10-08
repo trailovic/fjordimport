@@ -43,18 +43,18 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 font-black text-slate-950">Kontakt</h3>
+          <h3 className="mb-4 font-black text-slate-950">Kontakt (demodata)</h3>
 
           <div className="space-y-4 text-slate-600">
-            <a href="mailto:kontakt@fjordimport.no" className="flex items-center gap-3 hover:text-slate-950">
+            <div className="flex items-center gap-3 hover:text-slate-950">
               <Mail size={18} />
-              kontakt@fjordimport.no
-            </a>
+              kontakt@example.com
+            </div>
 
-            <a href="tel:+4700000000" className="flex items-center gap-3 hover:text-slate-950">
+            <div className="flex items-center gap-3 hover:text-slate-950">
               <Phone size={18} />
               +47 00 00 00 00
-            </a>
+            </div>
 
             <div className="flex items-center gap-3">
               <MapPin size={18} />
@@ -65,8 +65,8 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mt-10 flex max-w-7xl flex-col justify-between gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 md:flex-row">
-        <p>©{new Date().getFullYear()} trailovic.dev | Alle rettigheter reservert</p>
-        <p>Import • Distribusjon • B2B-partnerskap</p>
+        <p>Fjord Import · Demonstrasjonsnettside</p>
+        <p>Design og utvikling av trailovic.dev</p>
       </div>
     </footer>
   );

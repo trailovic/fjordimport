@@ -8,3 +8,10 @@ body {
   margin: 0;
   background: #f8fafc;
 }
+
+section[id] { scroll-margin-top: 7rem; }
+:focus-visible { outline: 3px solid #3b82f6; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
